@@ -20,20 +20,20 @@ Author: Roman V. Prikhodchenko <chujoii@gmail.com>
 
 
 
-  This file is part of course_net_inf_tech.
+  This file is part of course_comp_net_inf_tech.
 
-  course_net_inf_tech is free software: you can redistribute it and/or modify
+  course_comp_net_inf_tech is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
 
-  course_net_inf_tech is distributed in the hope that it will be useful,
+  course_comp_net_inf_tech is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
 
   You should have received a copy of the GNU General Public License
-  along with course_net_inf_tech.  If not, see <http://www.gnu.org/licenses/>.
+  along with course_comp_net_inf_tech.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
@@ -44,10 +44,10 @@ course network and information technologies
 
 
 * Description:
-курс "Компьютерные сетевые и информационные технологии" 
-(в расписании курс "Компьютерные сетевые технологии").
+курс "Компьютерные, сетевые и информационные технологии" (в расписании
+курс называется "Компьютерные сетевые технологии" - видимо сократили).
 
-Читается специальности "Электроника и электротехника" группа 21519
+Читается специальности "Электроэнергетика и электротехника" группа 21519
 ПетрГУ в 2015 году с февраля по май (второй семестр пятого курса).
 
 Предполагаемая нагрузка:
@@ -56,6 +56,17 @@ course network and information technologies
 - консультаций - 2 часа
 - зачёт - 2 часа
 
+
+
+0. Git. Изучение системы контроля версий будет полезно всем (и мне в
+   том числе), так как скорее всего студентам придётся работать с
+   текстами (документами, программами, отчётами), а системы управления
+   версиями позволяют этот процесс упорядочить.
+2. Документация. (TeX, org-mode, markdown, конверторы, презентации).
+1. Основы сетей и их построение. ModBus.  Реализация протокола
+   передачи данных (как минимум будет полезна нескольким студентам).
+   Однако в группе программировать умеют человек 5, для остальных
+   это будет кошмаром.
 
 * Usage:
 use it
