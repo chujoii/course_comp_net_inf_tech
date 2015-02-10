@@ -1,4 +1,4 @@
-* работа с версиями файлов
+* Работа с версиями файлов
 В большинстве случаев работа на компьютере заключается в с
 информацией.  Информация в виде документов, изображений и прочего
 хранится в файлах или базах данных (что по сути та же файловая система
@@ -16,7 +16,12 @@
   большим) и дальнейшая разработка будет идти в коллективе
 - необходимо отчитаться о проделанной работе
 
-** Например *линейное* редактирование:
+** Без копий *линейное* редактирование:
+единственная версия хранится на флэшке до потери/поломки флэшки и
+потом всё начинается заново: единственная версия хранится на флэшке до
+потери/поломки флэшки и потом всё начинается заново: единс...
+
+** Коллективное *линейное* редактирование:
 Если документ редактируется линейно, и включена "история изменений" в
 текстовом процессоре то всё достаточно просто: Первый редактирует
 документ. Другие ждут (они ведь не знают что он там напишет). Потом
@@ -29,7 +34,7 @@
 Суть такова: пока один работает над документом остальные ждут для
 соблюдения линейности.
 
-** Пример нелинейного редактирования
+** Пример *нелинейного* редактирования
 Пока ещё дружный коллектив: Иванов, Петров, Сидорова.
 
 Иванов разрабатывал документ и получилось 100 страниц текста пусть
@@ -40,11 +45,6 @@
 они вместе и сидят думают как им соединить все правки воедино. И тут
 появляется Сидорова у которой поменялся почти весь документ
 (орфография, пунктуация) C2.
-
-** Без копий
-единственная версия хранится на флэшке до потери/поломки флэшки и
-потом всё начинается заново: единственная версия хранится на флэшке до
-потери/поломки флэшки и потом всё начинается заново: единс...
 
 
 ** Ручное управление версиями
@@ -106,14 +106,6 @@ Tools).
 
 
 
-
-* Сравнение систем управления версиями
-https://github.com/
-https://gitorious.org/
-https://bitbucket.org/
-
-
-
 * Базовые принципы разработки ПО в VCS
 
 Порядок использования системы управления версиями в каждом конкретном
@@ -124,7 +116,7 @@ https://bitbucket.org/
 [[https://ru.wikipedia.org/wiki/Система управления версиями]]
 
 
-1. "Текст лучше хранить в текстовом файле" К.О.
+1. Текст следует хранить в текстовом файле. К.О.
 2. Любые рабочие, тестовые или демонстрационные версии проекта
    собираются только из репозитория системы. «Персональные» сборки,
    включающие ещё незафиксированные изменения, могут делать только
@@ -144,9 +136,45 @@ https://bitbucket.org/
 5. Версии проекта помечаются тегами. Выделенная и помеченная тегом
    версия более никогда не изменяется.
 
+
+
+
+* Сравнение систем управления версиями
+
+| Название                           | Разработчик                | Статус разработки                                  | Модель рипозитория            | модель параллелизма (concurrency) | Лицензия    | Поддерживаемые платформы                             | Стоимость                                                                                                                                                             | Специфика                            |
+|------------------------------------+----------------------------+----------------------------------------------------+-------------------------------+-----------------------------------+-------------+------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------|
+| CVS                                | The CVS Team               | maintained but new features not added              | Client–server                 | Merge                             | GNU GPL     | Unix-like, Windows, OS X                             | Free                                                                                                                                                                  |                                      |
+| Subversion (SVN)                   | Apache Software Foundation | actively developed                                 | Client–server                 | Merge or lock                     | Apache      | Unix-like, Windows, OS X                             | Free                                                                                                                                                                  |                                      |
+|                                    |                            |                                                    |                               |                                   |             |                                                      |                                                                                                                                                                       |                                      |
+| BitKeeper                          | BitMover Inc.              | actively developed                                 | Distributed                   | Merge                             | Proprietary | Unix-like, Windows, OS X                             | Non-free Quoted on an individual basis.                                                                                                                               |                                      |
+| darcs                              | The Darcs team             | actively developed                                 | Distributed                   | Merge                             | GNU GPL     | Unix-like, Windows, OS X                             | Free                                                                                                                                                                  |                                      |
+| Git                                | Junio Hamano               | actively developed                                 | Distributed                   | Merge                             | GNU GPL     | POSIX, Windows, OS X                                 | Free                                                                                                                                                                  |                                      |
+| GNU arch                           | Andy Tai                   | unmaintained                                       | Distributed                   | Merge                             | GNU GPL     | Unix-like, Windows, OS X                             | Free                                                                                                                                                                  |                                      |
+| GNU Bazaar                         | Canonical Ltd.             | limited development; latest release August 4, 2013 | Distributed and Client–server | Merge                             | GNU GPL     | Unix-like, Windows, OS X                             | Free                                                                                                                                                                  |                                      |
+| Mercurial                          | Matt Mackall               | actively developed                                 | Distributed                   | Merge                             | GNU GPL     | Unix-like, Windows, OS X                             | Free                                                                                                                                                                  |                                      |
+|                                    |                            |                                                    |                               |                                   |             |                                                      |                                                                                                                                                                       |                                      |
+| PLM (Product Lifecycle Management) | Dassault Systèmes          |                                                    |                               |                                   |             |                                                      |                                                                                                                                                                       | CAD (САПР)                           |
+| SWR PDM                            | Solidworks Russia          | https://www.linux.org.ru/forum/talks/11128886      |                               |                                   |             |                                                      |                                                                                                                                                                       | CAD (САПР)                           |
+|                                    |                            |                                                    |                               |                                   |             |                                                      |                                                                                                                                                                       |                                      |
+| Google Cloud Connect               | Google Docs                | actively developed                                 |                               |                                   | Proprietary | network based (Microsoft Office 2003, 2007 and 2010) | 5GB of Google Drive storage is included for free. Currently, additional storage costs per month are: 25GB-$2.49, 100GB-$4.99, etc. up to 16TB.                        | Microsoft Office 2003, 2007 and 2010 |
+| Team Foundation Server™ (TFS)      | Microsoft                  | actively developed                                 | Client–server, Distributed    | Merge or lock                     | Proprietary | Windows, Cross-platform via Visual Studio Online     | Free for up to 5 users in the Visual Studio Online or for open source projects through codeplex.com; else non-free, licensed through MSDN subscription or direct buy. | включает SharePoint™                 |
+| Visual SourceSafe™ (VSS)           | Microsoft®                 | serious bug fixes only (2005)                      | Shared Folder                 | Merge or lock                     | Proprietary | Windows                                              | Non-free ~$500 per license or single license included with each MSDN subscription.                                                                                    |                                      |
+
+** git
+Сервисы, предоставляющие хостинг для git-репозиториев:
+- https://github.com/
+- https://gitorious.org/
+- https://bitbucket.org/
+- https://sourceforge.net/
+- http://code.google.com/
+
 * Словарь
 
-Общепринятой терминологии не существует, в разных системах могут использоваться различные названия для одних и тех же действий. Ниже приводятся некоторые из наиболее часто используемых вариантов. Приведены английские термины, в литературе на русском языке используется тот или иной перевод или транслитерация.
+Общепринятой терминологии не существует, в разных системах могут
+использоваться различные названия для одних и тех же действий. Ниже
+приводятся некоторые из наиболее часто используемых
+вариантов. Приведены английские термины, в литературе на русском языке
+используется тот или иной перевод или транслитерация.
 
 - *branch* Ветвь — направление разработки, независимое от
   других. Ветвь представляет собой копию части (как правило, одного
