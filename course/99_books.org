@@ -1,0 +1,27 @@
+* литература по git:
+** про git
+*** Pro Git v2
+[[http://git-scm.com/book/en/v2]] 
+
+git [[https://github.com/progit/progit]]
+
+*** Про Git v1
+(перевод)
+[[http://git-scm.com/book/ru/v1]]
+
+git [[https://github.com/GArik/progit]]
+
+
+** git как направленный граф
+желательно прочитать после ознакомления с vcs
+
+*** Think Like a Git, A Guide for the Perplexed
+(оригинал)
+
+[[http://think-like-a-git.net/]]
+
+*** Думай как Git, руководство по Git
+(перевод)
+
+к сожалению оригинальная страница [[http://git.geekjob.ru]] уже не
+открывается поэтому можно ознакомится с [[http://web.archive.org/web/20131018020857/http://git.geekjob.ru/][архивом]]
