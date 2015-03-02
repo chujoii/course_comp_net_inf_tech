@@ -1,0 +1,35 @@
+* начало работы
+
+Так как все действия делаются от имени определённого человека, то
+имя автора должно быть зафиксировано в общесистемных настройках:
+
+#+BEGIN_BASH
+git config --global user.name "Ivanoff Peter Sidorovich"
+git config --global user.email ips@example.com
+#+END_BASH
+
+либо в настройках конкретного проекта:
+
+#+BEGIN_BASH
+git config          user.name "Ivanoff Peter Sidorovich"
+git config          user.email ips@example.com
+#+END_BASH
+
+
+* создание репозитория
+В начале выбираем название проекта. Далее в тексте фигурирует название
+каталога для проектов "project" и название инновационного проекта по
+разработке "velocipede". Вам необходимо придумать собственное
+название.
+
+необходимо создать каталог проекта
+#+BEGIN_BASH 
+mkdir velocipede
+#+END_BASH
+
+и перейти в него
+#+BEGIN_BASH
+cd velocipede
+#+END_BASH
+
+
