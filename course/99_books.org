@@ -1,19 +1,22 @@
 * литература по git:
-** про git
+** простое руководство по git
+https://rogerdudler.github.io/git-guide/index.ru.html
+
+** Про git
 *** Pro Git v2
 [[http://git-scm.com/book/en/v2]] 
 
 git [[https://github.com/progit/progit]]
 
 *** Про Git v1
-(перевод)
-[[http://git-scm.com/book/ru/v1]]
+(полностью на данный момент <2015-02-24> переведена только первая
+версия) [[http://git-scm.com/book/ru/v1]]
 
 git [[https://github.com/GArik/progit]]
 
 
-** git как направленный граф
-желательно прочитать после ознакомления с vcs
+** Git как направленный ациклический граф
+желательно прочитать после некоторого ознакомления с git
 
 *** Think Like a Git, A Guide for the Perplexed
 (оригинал)
@@ -25,3 +28,17 @@ git [[https://github.com/GArik/progit]]
 
 к сожалению оригинальная страница [[http://git.geekjob.ru]] уже не
 открывается поэтому можно ознакомится с [[http://web.archive.org/web/20131018020857/http://git.geekjob.ru/][архивом]]
+
+
+** шпаргалки
+
+*** ориентированные на области
+https://github.com/chujoii/git-cheatsheet/blob/master/drawings/git-cheatsheet.svg
+http://ndpsoftware.com/git-cheatsheet.html
+
+
+*** ориентированные на процессы
+http://www.quicklycode.com/cheatsheets/git-cheat-sheet-2
+http://www.git-tower.com/blog/git-cheat-sheet/
+https://github.com/pastjean/git-cheat-sheet/blob/master/git-cheat-sheet.svg
+
