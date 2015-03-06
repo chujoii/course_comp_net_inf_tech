@@ -20,3 +20,44 @@ git checkout -b test
 #+END_SRC
 
 
+* Просмотр дерева
+
+в терминале
+#+BEGIN_SRC bash
+git log --oneline --abbrev-commit --all --graph --decorate --color
+#+END_SRC
+
+графическая версия (с опцией "--all" показывает все ветви)
+#+BEGIN_SRC bash
+gitk --all
+#+END_SRC
+
+* Метки
+
+Метки позволяют отметить важные моменты в истории проекта
+
+Просмотр списка меток
+#+BEGIN_SRC bash
+git tag
+#+END_SRC
+
+Просмотр свойств метки
+#+BEGIN_SRC bash
+git show simple_label
+#+END_SRC
+
+** Простые метки
+#+BEGIN_SRC bash
+git tag sipmple_label
+#+END_SRC
+
+** Аннотированные метки
+#+BEGIN_SRC bash
+git tag -a label_v1 -m 'description for v1'
+#+END_SRC
+
+** Подписанные метки
+#+BEGIN_SRC bash
+git tag -s v2 -m 'signed tag for v2'
+#+END_SRC
+

@@ -1,4 +1,4 @@
-* литература по git:
+* Литература по git:
 - простое руководство по git
   https://rogerdudler.github.io/git-guide/index.ru.html
 - Про git
@@ -10,7 +10,7 @@
 - Git как направленный ациклический граф желательно прочитать после
   некоторого ознакомления с git
   + Think Like a Git, A Guide for the Perplexed (оригинал)
-[[    http://think-like-a-git.net/]]
+    [[http://think-like-a-git.net/]]
   + Думай как Git, руководство по Git (перевод). К сожалению
     оригинальная страница [[http://git.geekjob.ru]] уже не открывается
     поэтому можно ознакомится с [[http://web.archive.org/web/20131018020857/http://git.geekjob.ru/][архивом]]
