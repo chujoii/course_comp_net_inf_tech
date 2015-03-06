@@ -72,7 +72,8 @@ course network and information technologies
 
 читайте:
 - [[course/01_vcs.org][Описание систем управления версиями]]
-- [[course/02_git.org][Git]]
+- [[course/02_git.org][основы git]]
+- [[course/03_branch.org][ветвление git]]
 - [[course/99_books.org][Литература]]
 
 
