@@ -27,37 +27,8 @@ git checkout -b test
 git log --oneline --abbrev-commit --all --graph --decorate --color
 #+END_SRC
 
-графическая версия (с опцией "--all" показывает все ветви)
+графическая версия (с опцией "--all" показывает все ветви; --date-order сортирует коммиты по времени)
 #+BEGIN_SRC bash
-gitk --all
-#+END_SRC
-
-* Метки
-
-Метки позволяют отметить важные моменты в истории проекта
-
-Просмотр списка меток
-#+BEGIN_SRC bash
-git tag
-#+END_SRC
-
-Просмотр свойств метки
-#+BEGIN_SRC bash
-git show simple_label
-#+END_SRC
-
-** Простые метки
-#+BEGIN_SRC bash
-git tag sipmple_label
-#+END_SRC
-
-** Аннотированные метки
-#+BEGIN_SRC bash
-git tag -a label_v1 -m 'description for v1'
-#+END_SRC
-
-** Подписанные метки
-#+BEGIN_SRC bash
-git tag -s v2 -m 'signed tag for v2'
+gitk --all --date-order
 #+END_SRC
 
