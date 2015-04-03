@@ -278,14 +278,122 @@ git checkout -b test
 git log --oneline --abbrev-commit --all --graph --decorate --color
 #+END_SRC
 
-графическая версия (с опцией "--all" показывает все ветви; --date-order сортирует коммиты по времени)
+графическая версия (с опцией "--all" показывает все ветви;
+--date-order сортирует коммиты по времени)
 #+BEGIN_SRC bash
 gitk --all --date-order
 #+END_SRC
 
+
+* веб-сервис для хостинга проектов
+(рассмотрено на примере github.com)
+
+Запомните у вас будет два пароля: один для вэб-сайта github.com,
+другой для работы через ssh.
+
+** Генерация ssh ключей
+(оригинальный текст https://help.github.com/articles/generating-ssh-keys/)
+
+Рассматривается Linux версия: все пункты выполняются в терминале.
+*** Шаг 1: проверка SSH ключей
+
+#+BEGIN_SRC bash
+ls -al ~/.ssh
+#+END_SRC
+
+Скорее всего получится такой список:
+- id_dsa.pub
+- id_ecdsa.pub
+- id_ed25519.pub
+- id_rsa.pub
+*** Шаг 3: генерация новых ключей
+Укажите свой e-mail (тот который использовался при регистрации или
+если изменился адрес, то указанный в настройках профиля github.com):
+
+#+BEGIN_SRC bash
+ssh-keygen -t rsa -C "your_email@example.com"
+#+END_SRC
+
+На предложение указать файл:
+#+BEGIN_SRC bash
+Enter file in which to save the key (/home/you/.ssh/id_rsa): 
+#+END_SRC
+строго рекомендуется оставить значение по умолчанию и нажать Enter:
+
+
+Далее вас попросят ввести пароль дважды (это не пароль для github.com
+это другой пароль; пароль должен быть сложным, можно воспользоваться
+генератором паролей "pwgen"). Запомните пароль: он вам понадобится для
+работы через ssh.
+
+В итоге вам выдадут отпечаток ключа который выглядит примерно так:
+#+BEGIN_SRC bash
+01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
+#+END_SRC
+
+*** Шаг 3: добавление ключа к ssh-агенту
+Проверьте что ssh-агент запущен
+#+BEGIN_SRC bash
+eval "$(ssh-agent -s)"
+#+END_SRC
+
+должно появиться что-то типа
+#+BEGIN_SRC bash
+Agent pid 59566
+#+END_SRC
+
+добавление ключа к агенту
+#+BEGIN_SRC bash
+ssh-add ~/.ssh/id_rsa
+#+END_SRC
+
+*** Шаг 4: добавление ssh-ключа к аккаунту на сайте
+скопируйте ключ (он может называться id_rsa.pub, id_dsa.pub,
+id_ecdsa.pub или id_ed25519.pub):
+#+BEGIN_SRC bash
+cat ~/.ssh/id_rsa.pub
+#+END_SRC
+*Важно* скопировать ключ без добавления лишних пробелов и переводов
+строки!
+
+В разделе [[https://github.com/settings/profile][ настроек * (шестерёнка)]] выбрать подраздел [[https://github.com/settings/ssh][SSH keys]] и
+добавить ключ ssh (кнопка "Add SSH key").
+
+Вставьте скопированный ранее ключ и нажмите зелёную кнопку "Add key",
+после чего подтвердите подлинность себя и ваши действия вашим паролем
+от github.com
+
+*** Шаг 5: проверка
+#+BEGIN_SRC bash
+ssh -T git@github.com
+#+END_SRC
+
+Возможно появится предупреждение:
+#+BEGIN_SRC bash
+The authenticity of host 'github.com (207.97.227.239)' can't be established.
+# RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+# Are you sure you want to continue connecting (yes/no)?
+#+END_SRC
+
+Если вы уверены в совпадении отпечатка ключа то наберите слово "yes" целиком. Если не получилось то вам поможет [[https://help.github.com/articles/error-agent-admitted-failure-to-sign][решение]].
+
+*** Шаг 6: безопасность
+Никому не показывайте ssh ключи. Если вы работаете не на своём
+компьютере (что очень странно), то скопируйте на флэшку каталог с
+ключами "~/.ssh" и удалите его с этого компьютера полностью (уж точно
+не в корзину). И вообще лучше не хранить пароли и ключи на чужих
+компьютерах (указывайте путь к флэшке).
+
+После работы очистите менеджер копирования (Clipboard Manager,
+например Parcellite) от копий ключей которые вы копировали.
+
+
+
 * Совместная работа
-- Fork it
-- Create your feature branch (git checkout -b my-new-feature)
-- Commit your changes (git commit -am 'Add some feature')
-- Push to the branch (git push origin my-new-feature)
-- Create new Pull Request
+- Fork it (форкни его): создайте копию проекта у себя и загрузите
+  проект на компьютер (git clone git://github.com/username/project.git)
+- Создайте новую ветку (git branch my-new-feature;
+  git checkout my-new-feature)
+- Запечатлетние изменений (git commit -am 'Add some feature')
+- Заливка на сервер получившейся ветки (git push origin my-new-feature)
+- Cоздайте "Pull Request"
